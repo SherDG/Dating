@@ -1,0 +1,31 @@
+<div ng-controller="searchUsersController">
+<div id="header"><h1>Best Dating</h1></div>
+	<div id="main">
+		<div class="row">
+			<label>Gender</label>
+
+			<select id="gender">
+
+				<option value="A">All</option>
+				<option value="F">Female</option>
+				<option value="M">Male</option>
+				
+			</select>
+	</div>
+		<div class="row">
+				<label>Hobbies</label>
+				<input type="text" id="hobby"/>
+			</div>
+			<div class="row">
+			<button id="search">Search</button>
+		</div>
+		
+	<div ng-repeat="user in users" class="person-row">
+		<div class="person-info">
+		<img class="image" src="{{user.avatar}}"/>
+		<div>{{user.name}}</div>
+		<div>{{user.hobby}}</div>
+		</div>
+		<button>Add as friend</button>
+	</div>
+</div>
