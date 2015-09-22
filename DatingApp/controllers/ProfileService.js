@@ -1,6 +1,7 @@
-var esServices= angular.module('app');
+(function profileService(){
+var app = angular.module('app');
 
-esServices.factory('profileService', ['$http', function($http) {
+ app.factory('profileService', ['$http', function($http) {
         return {
             searchUser: function(filter, itemCount){
                 var requestData = {
@@ -23,3 +24,4 @@ esServices.factory('profileService', ['$http', function($http) {
                   }                  
                }    
 }]);
+})();

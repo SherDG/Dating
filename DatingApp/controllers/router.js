@@ -1,3 +1,7 @@
+// var app  = require(".././index.js");
+// var angular = require('angular');
+(function router(){
+  var app = angular.module('app'); 
   app.config(function ($routeProvider) { 
   $routeProvider 
     .when('/', { 
@@ -8,3 +12,5 @@
       redirectTo: '/' 
     }); 
 });
+})();
+// module.exports = router;
