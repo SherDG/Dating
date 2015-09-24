@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = {
-	entry: '../DatingApp/index.js',
+	entry: '../DatingApp/core/bootstrap.js',
 	resolve: {
     	root: path.resolve('./DatingApp'),
     	extensions: ['', '.js']

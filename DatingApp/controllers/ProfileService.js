@@ -1,7 +1,10 @@
-(function profileService(){
-var app = angular.module('app');
+// (
+// var app = ;
 
- app.factory('profileService', ['$http', function($http) {
+ module.exports = profileService;
+
+function profileService(){
+  angular.module('app').factory('profileService', ['$http', function($http) {
         return {
             searchUser: function(filter, itemCount){
                 var requestData = {
@@ -24,4 +27,4 @@ var app = angular.module('app');
                   }                  
                }    
 }]);
-})();
+};

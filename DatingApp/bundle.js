@@ -44,28 +44,39 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var angular = __webpack_require__(1);
-	var route = __webpack_require__(3);
-	var app = angular.module('app', [route]);
-	var router = __webpack_require__(5);
-	var searchUsersController = __webpack_require__(6);
-
-
-	module.exports = app;
-
-
-
+	/*jshint browser:true */
+	'use strict';
+	__webpack_require__(1)();  
+	// load Angular
+	__webpack_require__(2);  
+	// load the main app file
+	var appModule = __webpack_require__(4);  
+	// replaces ng-app="appName"
+	angular.element(document).ready(function () {  
+	  angular.bootstrap(document, [appModule.name], {
+	    //strictDi: true
+	  });
+	});
 
 /***/ },
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(2);
+	module.exports = function () {  
+	    /* JS */
+	    __webpack_require__(2);
+	};
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(3);
 	module.exports = angular;
 
 
 /***/ },
-/* 2 */
+/* 3 */
 /***/ function(module, exports) {
 
 	/**
@@ -28896,15 +28907,49 @@
 	!window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 
 /***/ },
-/* 3 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(4);
+	// var angular = require('angular');
+	var route = __webpack_require__(5);
+	// var app = angular.module('app', [route]);
+	// debugger
+	// var router = require('./controllers/router.js');
+
+
+	//https://github.com/angular-class/angular2-webpack-starter
+	//https://www.youtube.com/watch?v=RKqRj3VgR_c&list=PLw5h0DiJ-9PBiMeiBslHBZr2xUpx1aAUE
+	module.exports = angular.module('app', [route]).config(function ($routeProvider) { 
+	  $routeProvider 
+	    .when('/', { 
+	      controller: 'searchUsersController', 
+	      templateUrl: 'components/searchUsers/searchUsers.html' 
+	    }) 
+	    .otherwise({ 
+	      redirectTo: '/' 
+	    }); 
+	});;
+	var searchUsersController = __webpack_require__(7);
+	// default params
+	function printMessage (status) {  
+	// let
+	  var message = 'ES6';                    
+	// template string           
+	  console.log(message);
+	}
+	printMessage(); 
+
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(6);
 	module.exports = 'ngRoute';
 
 
 /***/ },
-/* 4 */
+/* 6 */
 /***/ function(module, exports) {
 
 	/**
@@ -29901,38 +29946,17 @@
 
 
 /***/ },
-/* 5 */
-/***/ function(module, exports) {
-
-	// var app  = require(".././index.js");
-	// var angular = require('angular');
-	(function router(){
-	  var app = angular.module('app'); 
-	  app.config(function ($routeProvider) { 
-	  $routeProvider 
-	    .when('/', { 
-	      controller: 'searchUsersController', 
-	      templateUrl: 'components/searchUsers/searchUsers.html' 
-	    }) 
-	    .otherwise({ 
-	      redirectTo: '/' 
-	    }); 
-	});
-	})();
-	// module.exports = router;
-
-
-/***/ },
-/* 6 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
 	(function searchUsersController(){
 	var app = angular.module('app');
-	var profileService = __webpack_require__(7);
+	var profileService = __webpack_require__(8)();
 	app.controller('searchUsersController', ['$scope', 'profileService', function ($scope, profileService) {
 	 
 	  console.log("Test"); 
+	  debugger
 	  profileService.searchUser('Dima', 10).then(function(users){
 	  $scope.users = users;
 	  });	
@@ -29944,13 +29968,17 @@
 
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports) {
 
-	(function profileService(){
-	var app = angular.module('app');
+	// (
+	// var app = ;
 
-	 app.factory('profileService', ['$http', function($http) {
+	 module.exports = profileService;
+
+	function profileService(){
+	  debugger
+	  angular.module('app').factory('profileService', ['$http', function($http) {
 	        return {
 	            searchUser: function(filter, itemCount){
 	                var requestData = {
@@ -29973,7 +30001,7 @@
 	                  }                  
 	               }    
 	}]);
-	})();
+	};
 
 
 /***/ }
