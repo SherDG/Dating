@@ -1,4 +1,6 @@
-var app = angular.module('app', ['ngRoute']);
+define(['angular'], function (angular) {
 
+	var app = angular.module('app', []);
+});
 
 
