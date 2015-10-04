@@ -7,9 +7,10 @@ define(function (require) {
 	app.init = function(){
 	    var components = require('components/module');
 		var controllers = require('controllers/ProfileService');
-		// var directives = require('./directives/directives');
-		debugger
+		var directives = require('./directives/module');
+
 		controllers.init();
+		directives.init();
 		components.init();
 		angular.bootstrap(document, ['app']);
 	}

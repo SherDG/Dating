@@ -5,10 +5,11 @@
 require.config({
   baseUrl: '/',
   paths: {
-    angular: 'bower_components/angular/angular',
-    route: 'bower_components/angular-route/angular-route',
-    underscore: 'bower_components/underscore/underscore',
-    app : 'app',
+    text       : 'bower_components/text/text',
+    angular    : 'bower_components/angular/angular',
+    route      : 'bower_components/angular-route/angular-route',
+    underscore : 'bower_components/underscore/underscore',
+    app        : 'app',
   },
   shim: {
           app: {
