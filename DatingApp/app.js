@@ -14,21 +14,14 @@ define(function (require) {
 		angular.bootstrap(document, ['app']);
 	}
 
-	app.controller('mainController', ['$scope',function ($scope) {
-	 
-	  console.log("mainController"); 
-	  // profileService.searchUser('Dima', 10).then(function(users){
-	  // $scope.users = users;
-	  // });	
-	}]);
 	app.config(['$routeProvider',
 	      function ($routeProvider) {
 				$routeProvider
 					.when('/', {
-						templateUrl: '/main.html',
-						controller: 'mainController'
+						templateUrl: 'components/main.html',
+						controller: 'applicationController'
 					})
-					.when('/index', {
+					.when('/search', {
 						templateUrl: 'components/searchUsers/searchUsers.html',
 						controller: 'searchUsersController'
 					})

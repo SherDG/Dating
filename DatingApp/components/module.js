@@ -1,5 +1,5 @@
 
-define(['underscore', './searchUsers/module'],function () {
+define(['underscore', './searchUsers/module', './applicationController'],function () {
   var componets = Array.prototype.slice.call(arguments);
   var _ = componets[0]();
   componets.splice(0,1)
