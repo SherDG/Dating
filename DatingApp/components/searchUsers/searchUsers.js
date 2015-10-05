@@ -1,5 +1,5 @@
 
-define(['angular'], function (angular) {
+define(['angular', 'css!components/searchUsers/style'], function (angular) {
 	var component = {};
 	component.init = function(){
 		angular.module('app').controller('searchUsersController', ['$scope','profileService', function ($scope, profileService) {

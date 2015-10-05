@@ -25,7 +25,12 @@ require.config({
           underscore : {
             exports: '_'
           }
-      }
+      },
+  map: {
+        '*': {
+        'css': 'bower_components/require-css/css' 
+  }
+}
 });
 
 require(['app'], function (app) {
