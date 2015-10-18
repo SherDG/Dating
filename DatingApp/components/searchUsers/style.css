@@ -2,6 +2,68 @@ body {
 	font-family: helvetica;
 }
 
+.cssSlideUp {
+  position: fixed; 
+  overflow: auto;
+  top: 20%;
+  right: 20%;
+  width: 50%;
+  opacity: 0;
+  padding: 20px 0px;
+  height: 100%;
+  background-color: #FFA200;
+  color: #343838; 
+  -webkit-transition: all 350ms cubic-bezier(0.6, 0.05, 0.28, 0.91);
+  transition: all 350ms cubic-bezier(0.6, 0.05, 0.28, 0.91);
+}
+
+/*.cssSlideUp {
+    transition: .250s linear all;
+    width: 180px;
+    height: 10%;
+    overflow: hidden;
+}
+.cssSlideUp.ng-hide {
+    width:0;
+    height:10%;
+}
+*/
+
+/*.cssSlideUp {
+  background:red;
+  position:absolute;
+  width: 100%;
+  height:100%;
+  top: 0;
+  -webkit-transform: translate3d(0,0,0); /* Chrome, Safari, Opera */
+/*  transform: translate3d(0,0,0,);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+
+.cssSlideUp.ng-hide-add,
+.cssSlideUp.ng-hide-remove {
+  display:block!important;
+}
+
+.cssSlideUp.ng-hide-remove.ng-hide-remove-active {
+  -webkit-animation:20s slide-left;
+  animation:20s slide-left;
+}
+
+.cssSlideUp.ng-hide-add.ng-hide-add-active {
+  -webkit-animation:20s slide-right;
+  animation:20s slide-right;
+}
+
+.cssSlideUp.ng-hide {
+  left:80%;
+  display:block!important;
+}*/
+
+
 #header{
 	background-color: #F16F51;
 	height:40px;

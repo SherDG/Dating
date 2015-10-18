@@ -10,6 +10,7 @@ require.config({
     route      : 'bower_components/angular-route/angular-route',
     underscore : 'bower_components/underscore/underscore',
     app        : 'app',
+    angularAnimate: 'bower_components/angular-animate/angular-animate',
   },
   shim: {
           app: {
@@ -24,6 +25,10 @@ require.config({
           },
           underscore : {
             exports: '_'
+          },
+          angularAnimate: {
+             exports: "angularAnimate",
+             deps: ['angular']
           }
       },
   map: {

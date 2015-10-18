@@ -1,9 +1,10 @@
 define(function (require) {
 
 	var angular = require('angular');
+	require('angularAnimate');
 	require('route');
 
-	var app = angular.module('app', ['ngRoute']);
+	var app = angular.module('app', ['ngRoute', 'ngAnimate']);
 	app.init = function(){
 	    var components = require('components/module');
 		var controllers = require('controllers/ProfileService');
